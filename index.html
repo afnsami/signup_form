@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js"></script>
+    <title>Sign UP</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <form>
+
+            <!--HEADER-->
+            <header>
+                <img src="images/odin-lined.png" alt="theOdinProject logo">
+                <h1>Odin Portal</h1>
+            </header>
+
+            
+            <div class="nameInput">
+                <input class="charField" type="text" placeholder="First Name">
+                <input class="charField" type="text" placeholder="Surname">
+            </div>
+
+            <div class="emailInput">
+                <input class="charField"
+                        type="email"
+                        placeholder="Email address or mobile number"
+                        maxlength="13">
+            </div>
+
+            <div class="passwordInput">
+                <input class="charField" type="password" placeholder="Password">
+                <input class="charField" type="password" placeholder="Retype Password">
+            </div>
+
+
+
+            <div class="birthDateInput">
+                <label for="">Date of birth</label>
+
+                <!--DAY INPUT-->
+                <select class="dateInput" id="numberSelect"></select>
+                <script>
+                    let selectElement = document.getElementById("numberSelect");
+                
+                    for (let i = 1; i <= 31; i++) {
+                        let optionElement = document.createElement("option");
+                        optionElement.value = i;
+                        optionElement.text = i;
+                        selectElement.add(optionElement);
+                    }
+                </script>
+
+                <!--MONTH INPUT-->
+                <select class="dateInput" name="" id="">
+                    <option>January</option>
+                    <option value="">February</option>
+                    <option value="">March</option>
+                    <option value="">April</option>
+                    <option value="">May</option>
+                    <option value="">June</option>
+                    <option value="">July</option>
+                    <option value="">August</option>
+                    <option value="">September</option>
+                    <option value="">October</option>
+                    <option value="">November</option>
+                    <option value="">December</option>
+                </select>
+
+                <!--YEAR INPUT-->
+                <select id="yearInput" class="dateInput"></select>
+                <script>
+                    let yearSelection = document.getElementById("yearInput");
+
+                    for (let i = 2023; i >= 1900; i--) {
+                        let yearOption = document.createElement("option");
+                        yearOption.value = i;
+                        yearOption.text = i;
+                        yearSelection.add(yearOption);
+                    }
+                </script>
+
+            </div>
+            
+
+
+
+
+
+            
+            <div class="genderInput">
+                <label for="">Gender</label>
+
+                <div class="genderButtonContainer">
+                    <div class="genderButton">
+                        Man<input type="radio" name="gender" checked>
+                    </div>
+                    
+                    <div class="genderButton">
+                        Woman<input type="radio" name="gender">
+                    </div>
+                    <div class="genderButton">
+                        Custom<input type="radio" name="gender">
+                    </div>
+                </div>
+
+            </div>
+
+            <button>Sign Up</button>
+            <p>Already have an account? <a href="">Log in</a></p>
+
+        </form>
+        
+    </div>
+    
+</body>
+
+</html>

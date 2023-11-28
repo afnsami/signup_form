@@ -5,42 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="main.js"></script>
-    <title>Sign UP</title>
+    <title>Sign Up</title>
 </head>
 
 <body>
     <div class="container">
 
-        <form>
+
+
+        <form method="post">
 
             <!--HEADER-->
             <header>
-                <img src="images/odin-lined.png" alt="theOdinProject logo">
+                <img src="images/odin.svg" alt="theOdinProject logo">
                 <h1>Odin Portal</h1>
             </header>
 
+            <div class="additionalText">
+                <p><i>Sign Up to get started</i></p>
+            </div>
             
+            <hr class="solid">
+
+            <!--INPUT-->
             <div class="nameInput">
-                <input class="charField" type="text" placeholder="First Name">
-                <input class="charField" type="text" placeholder="Surname">
+                <input class="charField"
+                        type="text" placeholder="First Name" 
+                        maxlength="15" 
+                        required>
+                <input class="charField" 
+                        type="text" 
+                        placeholder="Surname" 
+                        maxlength="15" 
+                        required>
             </div>
 
             <div class="emailInput">
                 <input class="charField"
                         type="email"
-                        placeholder="Email address or mobile number"
-                        maxlength="13">
+                        placeholder="Email address" maxlength="50">
             </div>
 
             <div class="passwordInput">
-                <input class="charField" type="password" placeholder="Password">
-                <input class="charField" type="password" placeholder="Retype Password">
+                <input class="charField" 
+                        type="password" 
+                        placeholder="Password" 
+                        required>
+                <input class="charField" 
+                        type="password" 
+                        placeholder="Retype Password" 
+                        required>
             </div>
 
-
-
             <div class="birthDateInput">
-                <label for="">Date of birth</label>
+                <label class="additionalInfo" for="">Date of birth</label>
 
                 <!--DAY INPUT-->
                 <select class="dateInput" id="numberSelect"></select>
@@ -86,14 +104,8 @@
 
             </div>
             
-
-
-
-
-
-            
             <div class="genderInput">
-                <label for="">Gender</label>
+                <label class="additionalInfo" for="">Gender</label>
 
                 <div class="genderButtonContainer">
                     <div class="genderButton">
@@ -104,19 +116,23 @@
                         Woman<input type="radio" name="gender">
                     </div>
                     <div class="genderButton">
-                        Custom<input type="radio" name="gender">
+                        Not to say<input type="radio" name="gender">
                     </div>
                 </div>
 
             </div>
 
-            <button>Sign Up</button>
-            <p>Already have an account? <a href="">Log in</a></p>
+
+            
+            <!--SUBMIT-->
+            <div id="signupButtonContainer">
+                <button>Sign Up</button>
+                <p>Already have an account? <a href="">Log in</a></p>
+            </div>
+            
 
         </form>
-        
     </div>
     
 </body>
-
 </html>

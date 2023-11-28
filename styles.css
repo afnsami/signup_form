@@ -3,21 +3,18 @@
     src: url(font/Norse-Bold.otf);
 }
 :root {
-    --motion-speed: 0.2s;
+    --motion-speed: 0.3s;
     --gap: 10px;
 }
-
 * {
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    /* border: 1px solid skyblue; */
+    /* border: 1px solid lightskyblue; */
 }
-
 html, body {
-    width: 100%;
+    margin: 0px;
+    padding: 0px;
     height: 100%;
-    margin: 0;
-    padding: 0;
 
     display: flex;
     align-items: center;
@@ -27,29 +24,44 @@ html, body {
 
 
 /*-----------HEADER-----------*/
+
 img {
-    width: 13%;
-    height: 13%;
+    width: 70px;
+    height: 70px;
 }
 header {
     display:flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    margin-bottom: 80px;
-    gap: 10px;
     font-family: 'Norse-Bold';
 }
 h1 {
     font-family: 'Norse-Bold', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+}
+.additionalText p {
+    font-size: 16px;
+    display: flex;
+    color: rgb(75, 75, 75);
+}
+
+.additionalText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -30px;
+    gap: 10px;
+}
+.additionalInfo {
     color: gray;
 }
 
 
-
 /*-----------FORM-----------*/
 form {
-    max-width: 600px;
+    width: 530px;
+    height: 650px;
 
     display: flex;
     flex-direction: column;
@@ -58,7 +70,6 @@ form {
 
     border: 1px solid #CCD0D5;
     border-radius: 10px;
-    padding: 25px 0px;
     gap: var(--gap);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
@@ -72,13 +83,12 @@ input[type="email"], .emailInput {
     width: 490px;
 }
 
-
 input[type="radio"] {
     background-color: gray;
 }
 
 .dateInput {
-    padding: 10px 45px;
+    padding: 10px 90px 10px 0px;
     border: 1px solid #CCD0D5;
     background-color: white;
 }
@@ -90,31 +100,26 @@ input[type="radio"] {
     display: flex;
     gap: var(--gap);
 }
-
-.genderInput {
-    display: column;
-}
 .genderButton {
     display: flex;
     align-items: center;
-    padding: 8px 35px;
+    padding: 8px 36px;
     border: 1px solid #CCD0D5;
 }
 .genderButtonContainer {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 5px;
 }
 
 
-/*-----------BUTTONS-----------*/
+/*-----------SIGN-UP BUTTON-----------*/
 
 button {
     border: none;
     border-radius: 5px;
     padding: 12px 30px;
-    margin-top: 60px;
 
     color: white;
     font-size: 18px;
@@ -127,12 +132,24 @@ button:hover {
     transition: var(--motion-speed);
 }
 
+#signupButtonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+}
 
 label {
-    font-size: 0.7em;
+    font-size: 14px;
     display: flex;
 }
 p {
-    margin-top: 0px;
-    font-size: 0.7em;
+    font-size: 15px;
+}
+
+hr.solid {
+    width: 100%;
+    margin-bottom: 30px;
+    border: 1px solid #CCD0D5;
 }

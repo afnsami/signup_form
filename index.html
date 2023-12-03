@@ -9,130 +9,130 @@
 </head>
 
 <body>
-    <div class="container">
 
+    <form method="post">
 
+        <!--TOP-->
+        <header>
+            <img src="images/odin.svg" alt="theOdinProject logo">
+            <h1>Odin Portal</h1>
+        </header>
+        <p id="additionalText"><i>Sign Up to get started</i></p>
 
-        <form method="post">
+        <!--MIDDLE-->
+        <div id="inputAreaContainer">
 
-            <!--HEADER-->
-            <header>
-                <img src="images/odin.svg" alt="theOdinProject logo">
-                <h1>Odin Portal</h1>
-            </header>
-
-            <div class="additionalText">
-                <p><i>Sign Up to get started</i></p>
-            </div>
-            
-            <hr class="solid">
-
-            <!--INPUT-->
-            <div class="nameInput">
-                <input class="charField"
-                        type="text" placeholder="First Name" 
-                        maxlength="15" 
-                        required>
-                <input class="charField" 
-                        type="text" 
-                        placeholder="Surname" 
-                        maxlength="15" 
-                        required>
-            </div>
-
-            <div class="emailInput">
-                <input class="charField"
-                        type="email"
-                        placeholder="Email address" maxlength="50">
-            </div>
-
-            <div class="passwordInput">
-                <input class="charField" 
-                        type="password" 
-                        placeholder="Password" 
-                        required>
-                <input class="charField" 
-                        type="password" 
-                        placeholder="Retype Password" 
-                        required>
-            </div>
-
-            <div class="birthDateInput">
-                <label class="additionalInfo" for="">Date of birth</label>
-
-                <!--DAY INPUT-->
-                <select class="dateInput" id="numberSelect"></select>
-                <script>
-                    let selectElement = document.getElementById("numberSelect");
+            <!--CHARACTER INPUT-->
+            <div id="userInputDiv">
                 
-                    for (let i = 1; i <= 31; i++) {
-                        let optionElement = document.createElement("option");
-                        optionElement.value = i;
-                        optionElement.text = i;
-                        selectElement.add(optionElement);
-                    }
-                </script>
+                <div id="nameInput">
+                    <input type="text" 
+                            placeholder="First Name"
+                            minlength="2"
+                            maxlength="15"
+                            required>
+                    <input type="text"
+                            placeholder="Surname"
+                            minlength="2"
+                            maxlength="15"
+                            required>
+                </div>
 
-                <!--MONTH INPUT-->
-                <select class="dateInput" name="" id="">
-                    <option>January</option>
-                    <option value="">February</option>
-                    <option value="">March</option>
-                    <option value="">April</option>
-                    <option value="">May</option>
-                    <option value="">June</option>
-                    <option value="">July</option>
-                    <option value="">August</option>
-                    <option value="">September</option>
-                    <option value="">October</option>
-                    <option value="">November</option>
-                    <option value="">December</option>
-                </select>
-
-                <!--YEAR INPUT-->
-                <select id="yearInput" class="dateInput"></select>
-                <script>
-                    let yearSelection = document.getElementById("yearInput");
-
-                    for (let i = 2023; i >= 1900; i--) {
-                        let yearOption = document.createElement("option");
-                        yearOption.value = i;
-                        yearOption.text = i;
-                        yearSelection.add(yearOption);
-                    }
-                </script>
-
+                <input type="email"
+                        placeholder="Email address" 
+                        maxlength="50"
+                        required>
+                
+                <div id="passwordInput">
+                    <input type="password"
+                            placeholder="Password"
+                            required>
+                    <input type="password"
+                            placeholder="Retype Password"
+                            required>
+                </div>
             </div>
-            
-            <div class="genderInput">
-                <label class="additionalInfo" for="">Gender</label>
+            <!--SELECTION INPUT-->
+            <div id="userSelectionDiv">
 
-                <div class="genderButtonContainer">
-                    <div class="genderButton">
-                        Man<input type="radio" name="gender" checked>
+                <div id="birthDateDiv">
+                    <label class="additionalInfo" for="dateInput">Date of birth</label>
+
+                    <div class="dateInputContainer">
+                        
+                        <!--DAY INPUT-->
+                        <select class="dateOfBirth" id="daySelect"></select>
+                        <script>
+                            let selectElement = document.getElementById("daySelect");
+            
+                            for (let i = 1; i <= 31; i++) {
+                                let optionElement = document.createElement("option");
+                                optionElement.value = i;
+                                optionElement.text = i;
+                                selectElement.add(optionElement);
+                            }
+                        </script>
+                        
+                        <!--MONTH INPUT-->
+                        <select class="dateOfBirth" id="monthSelect">
+                            <option name="january" value="1">January</option>
+                            <option name="february" value="2">February</option>
+                            <option name="march" value="3">March</option>
+                            <option name="april" value="4">April</option>
+                            <option name="may" value="5">May</option>
+                            <option name="june" value="6">June</option>
+                            <option name="july" value="7">July</option>
+                            <option name="august" value="8">August</option>
+                            <option name="september" value="9">September</option>
+                            <option name="october" value="10">October</option>
+                            <option name="november" value="11">November</option>
+                            <option name="december" value="12">December</option>
+                        </select>
+
+                        <!--YEAR INPUT-->
+                        <select class="dateOfBirth" id="yearSelect"></select>
+                        <script>
+                            let yearSelection = document.getElementById("yearSelect");
+                            for (let i = 2023; i >= 1900; i--) {
+                                let yearOption = document.createElement("option");
+                                yearOption.value = i;
+                                yearOption.text = i;
+                                yearSelection.add(yearOption);
+                            }
+                        </script>
                     </div>
-                    
-                    <div class="genderButton">
-                        Woman<input type="radio" name="gender">
-                    </div>
-                    <div class="genderButton">
-                        Not to say<input type="radio" name="gender">
+                </div>
+            
+                <div class="genderDiv">
+                    <label class="additionalInfo">Gender</label>
+                    <div class="genderButtonsContainer">
+                        <div class="genderButton">
+                            <input type="radio" name="gender" id="man" checked>
+                            <label for="man">Man</label>
+                        </div>
+            
+                        <div class="genderButton">
+                            <input type="radio" name="gender" id="woman">
+                            <label for="woman">Woman</label>
+                        </div>
+                        <div class="genderButton">
+                            <input type="radio" name="gender" id="hidden">
+                            <label for="hidden">Not to say</label>
+                        </div>
                     </div>
                 </div>
 
             </div>
 
+        </div>
 
-            
-            <!--SUBMIT-->
-            <div id="signupButtonContainer">
-                <button>Sign Up</button>
-                <p>Already have an account? <a href="">Log in</a></p>
-            </div>
-            
+        <!--BOTTOM-->
+        <div id="submitButtonContainer">
+            <button>Sign Up</button>
+            <p>Already have an account? <a href="">Log in</a></p>
+        </div>
 
-        </form>
-    </div>
+    </form>
     
 </body>
 </html>

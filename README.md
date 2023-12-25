@@ -1,5 +1,5 @@
 # Signup Form
-## Live Preview <a href="https://anaseig.github.io/sign-up-form">HERE</a>
+## Live Preview <a href="https://anaseig.github.io/signup-form">HERE</a>
 
 <img src="images/preview.png">
 

@@ -4,20 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
     <title>Sign Up</title>
 </head>
 
-<body>
+<body onclick="clearInstruction()">
 
-    <form method="post">
+    <form id="form" action="" method="POST" onsubmit="validateForm()">
 
         <!--TOP-->
+        <div id="exitButtonDiv">
+            <div></div>
+            <button type="reset"></button>
+        </div>
+
         <header>
             <img src="images/odin.svg" alt="theOdinProject logo">
             <h1>Odin Portal</h1>
         </header>
         <p id="additionalText"><i>Sign Up to get started</i></p>
+
+
 
         <!--MIDDLE-->
         <div id="inputAreaContainer">
@@ -27,11 +34,15 @@
                 
                 <div id="nameInput">
                     <input type="text" 
+                            name="first-name"
+                            id="firstName"
                             placeholder="First Name"
                             minlength="2"
                             maxlength="15"
                             required>
                     <input type="text"
+                            name="surname"
+                            id="surName"
                             placeholder="Surname"
                             minlength="2"
                             maxlength="15"
@@ -39,19 +50,41 @@
                 </div>
 
                 <input type="email"
-                        placeholder="Email address" 
-                        maxlength="50"
+                        id="emailInput"
+                        name="email"
+                        placeholder="Email address"
+                        minlength="8"
+                        maxlength="60"
                         required>
                 
-                <div id="passwordInput">
-                    <input type="password"
-                            placeholder="Password"
-                            required>
-                    <input type="password"
-                            placeholder="Retype Password"
-                            required>
+                <label class="additionalInfo" id="passwordInstruction" for="passwordFieldContainer"></label>
+
+                <div id="passwordFieldContainer">
+
+                    <div id="passwordInput">
+                        <input name="newPassword"
+                                id="newPassword"
+                                type="password"
+                                placeholder="Password"
+                                minlength="8"
+                                maxlength="50"
+                                pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+                                onfocus="passwordInstruction()"
+                                required>
+                        <input name="retype-password"
+                                id="retypePassword"
+                                type="password"
+                                placeholder="Retype Password"
+                                minlength="8"
+                                maxlength="50"
+                                pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+                                oninput="checkPassword()"
+                                onfocus="checkPassword(), clearInstruction()"
+                                required>
+                    </div>
                 </div>
             </div>
+
             <!--SELECTION INPUT-->
             <div id="userSelectionDiv">
 
@@ -61,7 +94,7 @@
                     <div class="dateInputContainer">
                         
                         <!--DAY INPUT-->
-                        <select class="dateOfBirth" id="daySelect"></select>
+                        <select name="day" class="dateOfBirth" id="daySelect"></select>
                         <script>
                             let selectElement = document.getElementById("daySelect");
             
@@ -74,7 +107,7 @@
                         </script>
                         
                         <!--MONTH INPUT-->
-                        <select class="dateOfBirth" id="monthSelect">
+                        <select name="month" class="dateOfBirth" id="monthSelect">
                             <option name="january" value="1">January</option>
                             <option name="february" value="2">February</option>
                             <option name="march" value="3">March</option>
@@ -90,10 +123,12 @@
                         </select>
 
                         <!--YEAR INPUT-->
-                        <select class="dateOfBirth" id="yearSelect"></select>
+                        <select name="year" class="dateOfBirth" id="yearSelect"></select>
                         <script>
                             let yearSelection = document.getElementById("yearSelect");
-                            for (let i = 2023; i >= 1900; i--) {
+                            let currentYear = new Date().getFullYear();
+
+                            for (let i = (currentYear - 18); i >= 1900; i--) {
                                 let yearOption = document.createElement("option");
                                 yearOption.value = i;
                                 yearOption.text = i;
@@ -106,29 +141,42 @@
                 <div class="genderDiv">
                     <label class="additionalInfo">Gender</label>
                     <div class="genderButtonsContainer">
+
                         <div class="genderButton">
-                            <input type="radio" name="gender" id="man" checked>
+                            <input type="radio"
+                                    name="gender"
+                                    value="man"
+                                    id="man"
+                                    required>
                             <label for="man">Man</label>
                         </div>
-            
                         <div class="genderButton">
-                            <input type="radio" name="gender" id="woman">
+                            <input type="radio" 
+                                    name="gender" 
+                                    value="woman"
+                                    id="woman"
+                                    required>
                             <label for="woman">Woman</label>
                         </div>
                         <div class="genderButton">
-                            <input type="radio" name="gender" id="hidden">
+                            <input type="radio" 
+                                    name="gender"
+                                    value="hidden"
+                                    id="hidden"
+                                    required>
                             <label for="hidden">Not to say</label>
                         </div>
                     </div>
                 </div>
 
             </div>
-
         </div>
+
+
 
         <!--BOTTOM-->
         <div id="submitButtonContainer">
-            <button>Sign Up</button>
+            <button type="submit" id="submitButton">Sign Up</button>
             <p>Already have an account? <a href="">Log in</a></p>
         </div>
 

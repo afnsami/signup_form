@@ -28,6 +28,7 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    margin-top: -31px;
     padding: 10px 0px 10px 0px;
     border-radius: 10px 10px 0px 0px;
     background-color: #f7f7f7;
@@ -35,13 +36,13 @@ header {
 img {
     width: 70px;
     height: 70px;
-    -webkit-filter: drop-shadow(0px 4px 5px rgb(0, 0, 0, 0.25));
+    -webkit-filter: drop-shadow(0px 4px 3.5px rgb(0, 0, 0, 0.25));
     transition: var(--motion-speed);
 }
 img:hover {
-    width: 75px;
-    height: 75px;
-    -webkit-filter: drop-shadow( 0px 3px 5px rgb(0, 0, 0, 0.15));
+    width: 78px;
+    height: 78px;
+    -webkit-filter: drop-shadow(0px 3px 5px rgb(0, 0, 0, 0.13));
     transition: var(--motion-speed);
 }
 h1 {
@@ -55,6 +56,25 @@ h1 {
     justify-content: center;
     font-size: 15px;
     color: rgb(150, 150, 150);
+}
+
+/*EXIT BUTTON*/
+#exitButtonDiv {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+}
+button[type="reset"] {
+    width: 15px;
+    height: 15px;
+    border: none;
+    border-radius: 100%;
+    background-color: rgb(210, 210, 210);
+    transition: var(--motion-speed);
+}
+button[type="reset"]:hover {
+    background-color: #FF605C;
+    transition: var(--motion-speed);
 }
 
 
@@ -100,6 +120,17 @@ input[type="email"] {
     color: gray;
 }
 
+input[type="text"]:invalid, input[type="email"]:invalid, input[type="password"]:invalid {
+    outline-color: #ff4e50;
+}
+input[type="text"]:valid, input[type="email"]:valid, input[id="newPassword"]:valid {
+    outline-color: #4dd889;
+}
+
+#passwordFieldContainer {
+    display: flex;
+    margin-top: -10px;
+}
 
 
 /*-----BIRTH DATE INPUT*/
@@ -142,14 +173,14 @@ input[type="radio"] {
     font-size: 17px;
     border: 1px solid #CCD0D5;
 }
+
 .genderButtonsContainer label:after {
-    width: 12px;
-    height: 12px;
+    width: 11px;
+    height: 11px;
     content: "";
-    border: 1px solid black;
+    border: 1px solid #CCD0D5;
     border-radius: 100%;
 }
-
 input[type="radio"]:checked + label:after {
     border: 1px solid #e3b261;
     background-color: #e3b261;
@@ -172,7 +203,9 @@ label {
     font-size: 14px;
     display: flex;
 }
-button {
+
+/*SUBMIT BUTTON*/
+button[type="submit"] {
     padding: 10px 28px;
     margin-top: 20px;
     border: none;
@@ -183,10 +216,11 @@ button {
     background-color: #e3b261;
     transition: var(--motion-speed);
 }
-button:hover {
+button[type="submit"]:hover {
     background-color: #a78347;
     transition: var(--motion-speed);
 }
+
 p {
     font-size: 15px;
 }

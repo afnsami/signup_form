@@ -1,5 +1,5 @@
 # Signup Form
-## Live Preview <a href="https://afnsami.github.io/signup-form">HERE</a>
+## Live Preview <a href="https://afnsami.github.io/signup_form">HERE</a>
 
 <img src="images/preview.png">
 
